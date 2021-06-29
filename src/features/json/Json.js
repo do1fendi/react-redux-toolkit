@@ -19,7 +19,7 @@ export function Json() {
       {/* {JSON.stringify(json)} */}
       <input type='number' value={num} onChange={(e) => setNum(e.target.value)} />
       <button onClick={() => dispatch(delJson(num))}>Delete JSON</button>
-      {json.map(item => <div key={item.id}>{item.userId} - {item.title} <button onClick={() => dispatch(delJson(item.id))}>-</button></div>)}
+      {json.length > 0 ? json.map(item => <div key={item.id}>{item.userId} - {item.title} <button onClick={() => dispatch(delJson(item.id))}>-</button></div>) : ""}
     </div>
   );
 }
